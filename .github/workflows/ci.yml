@@ -10,10 +10,6 @@ on:
 jobs:
   autogreen:
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: read/write
-  
     steps:
       - name: Clone repository
         uses: actions/checkout@v3
@@ -24,6 +20,5 @@ jobs:
           git config --local user.name "yyds688"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          git commit --allow-empty -m "a commit a day keeps your girlfriend away"
+          git commit --allow-empty -m "keeps your girlfriend away"
           git push
-
